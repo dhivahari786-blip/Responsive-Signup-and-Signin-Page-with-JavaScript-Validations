@@ -1,5 +1,7 @@
 // ================= SIGNUP VALIDATION =================
-
+const basePath = window.location.pathname.includes("Responsive-Signup-and-Signin-Page-with-JavaScript-Validations")
+  ? "/Responsive-Signup-and-Signin-Page-with-JavaScript-Validations/"
+  : "/";
 const signupForm = document.getElementById("signupForm");
 
 if (signupForm) {
@@ -102,7 +104,7 @@ if (signupForm) {
 
             localStorage.setItem("user", JSON.stringify(userData));
             alert("Signup Successful! Please Sign In.");
-           window.location.href = "./SignIn.html";
+           window.location.href = basePath + "SignIn.html";
         }
     });
 }
@@ -159,7 +161,7 @@ if (signinForm) {
         // Success
         localStorage.setItem("isLoggedIn", "true");
         alert("Login Successful!");
-        window.location.href = "./travelapp.html";
+        window.location.href = basePath + "travelapp.html";
     });
 }
 
@@ -179,7 +181,7 @@ if (window.location.pathname.includes("travelapp.html")) {
 
     if (isLoggedIn !== "true") {
         alert("Access denied! Please login first.");
-        window.location.href = "SignIn.html";
+        window.location.href = basePath + "SignIn.html";
     }
 }
 // ================= SHOW / HIDE PASSWORD =================
